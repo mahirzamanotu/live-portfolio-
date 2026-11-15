@@ -1,8 +1,30 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*
+  Custom Stylesheet
+  This file contains the custom styles for the site and is loaded after
+  Bootstrap, so its rules take priority when both apply to the same element.
+  It styles the welcome banner, the card hover effect and the footer icons.
+*/
+
+/* The welcome banner fills most of the screen and uses a blue to purple gradient. */
+.hero {
+  min-height: 70vh;
+  background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
 }
 
-a {
-  color: #00B7FF;
+/* The cards rise slightly and gain a deeper shadow when hovered. */
+.feature-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* The footer icons fade and grow slightly when hovered. */
+.social-link {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.social-link:hover {
+  opacity: 0.75;
+  transform: scale(1.15);
 }

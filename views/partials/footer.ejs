@@ -1,0 +1,31 @@
+<!-- footer.ejs — Footer Partial
+  This file contains the bottom section of every page. It displays the
+  GitHub and LinkedIn links and loads the JavaScript files used by the site.
+-->
+</main>
+
+  <footer class="bg-dark text-light py-4 mt-5">
+    <div class="container text-center">
+      <!-- The social links open in a new tab, and noopener is included as a security best practice. -->
+      <div class="mb-3">
+        <a href="https://github.com/mahirzamanotu" target="_blank" rel="noopener"
+           class="text-light fs-3 mx-3 social-link" aria-label="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/mahir-zaman-295592346/" target="_blank" rel="noopener"
+           class="text-light fs-3 mx-3 social-link" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+      <!-- The current year is inserted by the main script. -->
+      <p class="mb-0 small">&copy; <span id="year"></span> Mahir Zaman. Built with Node.js, Express &amp; EJS.</p>
+    </div>
+  </footer>
+
+  <!-- The Bootstrap script allows the navigation menu to open and close on small screens. -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- The main script is served from the javascripts folder inside public. -->
+  <script src="/javascripts/main.js"></script>
+</body>
+</html>

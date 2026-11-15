@@ -1,11 +1,59 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%#
+  Home Page
+  The header and footer are included from the partials, so this file only
+  contains the content unique to the Home page, which is the welcome banner
+  and the What I Do section.
+%>
+<%- include('partials/header') %>
+
+<!-- The welcome banner introduces the site owner and links to the main pages. -->
+<section class="hero text-light d-flex align-items-center">
+  <div class="container text-center py-5">
+    <h1 class="display-4 fw-bold">Hi, I'm Mahir Zaman</h1>
+    <p class="lead mb-4">Networking &amp; IT Student · Aspiring Developer</p>
+
+    <a href="/projects" class="btn btn-light btn-lg me-2">
+      <i class="fa-solid fa-folder-open me-2"></i>View My Projects
+    </a>
+    <a href="/contact" class="btn btn-outline-light btn-lg">
+      <i class="fa-solid fa-paper-plane me-2"></i>Contact Me
+    </a>
+  </div>
+</section>
+
+<!-- The What I Do section uses the Bootstrap grid to show three cards side by side, which stack on smaller screens. -->
+<section class="container py-5">
+  <h2 class="text-center mb-4">What I Do</h2>
+
+  <div class="row g-4 text-center">
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm feature-card">
+        <div class="card-body">
+          <i class="fa-solid fa-network-wired fa-2x text-primary mb-3"></i>
+          <h5 class="card-title">Networking</h5>
+          <p class="card-text">Designing and troubleshooting networks.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm feature-card">
+        <div class="card-body">
+          <i class="fa-solid fa-laptop-code fa-2x text-primary mb-3"></i>
+          <h5 class="card-title">Web Development</h5>
+          <p class="card-text">Building sites with Node.js, Express and EJS.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm feature-card">
+        <div class="card-body">
+          <i class="fa-solid fa-shield-halved fa-2x text-primary mb-3"></i>
+          <h5 class="card-title">IT Support</h5>
+          <p class="card-text">Keeping systems running and secure.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
