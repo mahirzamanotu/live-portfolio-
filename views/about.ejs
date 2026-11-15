@@ -1,0 +1,70 @@
+<%#
+  About Me Page
+  This page introduces the site owner with a profile photo, a short
+  biography, a list of skills and education details. The header and footer
+  are included from the partials.
+%>
+<%- include('partials/header') %>
+
+<!-- The page banner shows the page title. -->
+<section class="page-header text-light text-center py-5">
+  <div class="container">
+    <h1 class="fw-bold"><i class="fa-solid fa-user me-2"></i>About Me</h1>
+  </div>
+</section>
+
+<section class="container py-5">
+  <div class="row align-items-center g-5">
+
+    <!-- The profile photo is served from the images folder inside public. -->
+    <div class="col-md-4 text-center">
+      <img src="/images/profile.jpg" alt="Photo of Mahir Zaman" class="profile-photo">
+    </div>
+
+    <!-- The biography explains who the site owner is, their goals and their interests. -->
+    <div class="col-md-8">
+      <h2 class="mb-3">Hi, I'm Mahir Zaman</h2>
+      <p class="lead">
+        I'm a Networking and IT student at Ontario Tech University with a strong
+        interest in how networks and systems connect and communicate.
+      </p>
+      <p>
+        My goal is to keep growing in the networking and IT field by earning
+        industry certifications and building hands on projects that put what I
+        learn into practice.
+      </p>
+      <p>
+        Outside of my studies, I enjoy playing Nintendo games and training in martial arts.
+      </p>
+    </div>
+  </div>
+
+  <!-- The skills are shown as Bootstrap badges with Font Awesome icons. -->
+  <div class="mt-5">
+    <h3 class="mb-3"><i class="fa-solid fa-screwdriver-wrench me-2 text-accent"></i>Skills</h3>
+    <span class="badge bg-navy fs-6 m-1"><i class="fa-solid fa-network-wired me-1"></i>TCP/IP and Subnetting</span>
+    <span class="badge bg-navy fs-6 m-1"><i class="fa-solid fa-diagram-project me-1"></i>Routing and Switching</span>
+    <span class="badge bg-navy fs-6 m-1"><i class="fa-solid fa-server me-1"></i>Cisco Packet Tracer</span>
+    <span class="badge bg-navy fs-6 m-1"><i class="fa-brands fa-linux me-1"></i>Linux</span>
+    <span class="badge bg-navy fs-6 m-1"><i class="fa-brands fa-windows me-1"></i>Windows Server</span>
+    <span class="badge bg-navy fs-6 m-1"><i class="fa-brands fa-python me-1"></i>Python</span>
+    <span class="badge bg-navy fs-6 m-1"><i class="fa-brands fa-js me-1"></i>JavaScript</span>
+    <span class="badge bg-navy fs-6 m-1"><i class="fa-brands fa-node-js me-1"></i>Node.js</span>
+    <span class="badge bg-navy fs-6 m-1"><i class="fa-brands fa-html5 me-1"></i>HTML and CSS</span>
+    <span class="badge bg-navy fs-6 m-1"><i class="fa-brands fa-git-alt me-1"></i>Git and GitHub</span>
+  </div>
+
+  <!-- The education section lists the current program of study. -->
+  <div class="mt-5">
+    <h3 class="mb-3"><i class="fa-solid fa-graduation-cap me-2 text-accent"></i>Education</h3>
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title mb-1">Ontario Tech University</h5>
+        <p class="card-text mb-1">Networking and IT</p>
+        <p class="card-text text-body-secondary mb-0">Expected Graduation: 2028</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

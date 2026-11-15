@@ -1,0 +1,49 @@
+<%#
+  Projects Page
+  This page receives the project list from the projects route and uses a
+  forEach loop to create one Bootstrap card per project. Each card shows the
+  project icon, title, description, the technologies used and a link when
+  one is available.
+%>
+<%- include('partials/header') %>
+
+<section class="page-header text-light text-center py-5">
+  <div class="container">
+    <h1 class="fw-bold"><i class="fa-solid fa-folder-open me-2"></i>Projects</h1>
+  </div>
+</section>
+
+<section class="container py-5">
+  <div class="row g-4">
+
+    <% projects.forEach(function (project) { %>
+      <!-- One card is created for each project in the list. -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow-sm feature-card">
+          <div class="card-body">
+            <i class="<%= project.icon %> fa-2x text-accent mb-3"></i>
+            <h5 class="card-title"><%= project.title %></h5>
+            <p class="card-text"><%= project.description %></p>
+
+            <!-- Each technology is displayed as a small badge. -->
+            <% project.tech.forEach(function (item) { %>
+              <span class="badge bg-secondary me-1 mb-1"><%= item %></span>
+            <% }); %>
+          </div>
+
+          <!-- The link button only appears when the project has a link. -->
+          <% if (project.link) { %>
+            <div class="card-footer bg-transparent border-0 pb-3">
+              <a href="<%= project.link %>" target="_blank" rel="noopener" class="btn btn-outline-navy btn-sm">
+                <i class="fa-brands fa-github me-1"></i>View Project
+              </a>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    <% }); %>
+
+  </div>
+</section>
+
+<%- include('partials/footer') %>

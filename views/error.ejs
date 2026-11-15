@@ -1,3 +1,21 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<%#
+  Error Page
+  This page is shown when a page cannot be found or the server encounters
+  an error. It uses the same header and footer as the rest of the site. The
+  technical details are only shown while the site runs in development mode.
+%>
+<%- include('partials/header') %>
+
+<section class="container py-5 text-center">
+  <i class="fa-solid fa-triangle-exclamation fa-4x text-warning mb-3"></i>
+  <h1 class="display-4"><%= error.status || 500 %></h1>
+  <h2 class="mb-4"><%= message %></h2>
+
+  <% if (error.stack) { %>
+    <pre class="text-start small bg-body-tertiary p-3 rounded"><%= error.stack %></pre>
+  <% } %>
+
+  <a href="/" class="btn btn-navy mt-3"><i class="fa-solid fa-house me-2"></i>Back to Home</a>
+</section>
+
+<%- include('partials/footer') %>
