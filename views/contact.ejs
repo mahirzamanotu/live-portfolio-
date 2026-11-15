@@ -1,0 +1,70 @@
+<%#
+  Contact Me Page
+  This page shows the contact details and a contact form. The form sends its
+  values to the contact route using the POST method. When the route responds
+  with success set to true, a thank you message is shown above the form.
+%>
+<%- include('partials/header') %>
+
+<section class="page-header text-light text-center py-5">
+  <div class="container">
+    <h1 class="fw-bold"><i class="fa-solid fa-envelope me-2"></i>Contact Me</h1>
+  </div>
+</section>
+
+<section class="container py-5">
+  <div class="row g-5">
+
+    <!-- The contact details list the ways to reach the site owner. -->
+    <div class="col-md-5">
+      <h3 class="mb-4">Get in Touch</h3>
+      <p class="mb-3">
+        <i class="fa-solid fa-envelope fa-fw text-accent me-2"></i>
+        <a href="mailto:mahirzaman2510@gmail.com">mahirzaman2510@gmail.com</a>
+      </p>
+      <p class="mb-3">
+        <i class="fa-brands fa-github fa-fw text-accent me-2"></i>
+        <a href="https://github.com/mahirzamanotu" target="_blank" rel="noopener">github.com/mahirzamanotu</a>
+      </p>
+      <p class="mb-3">
+        <i class="fa-brands fa-linkedin fa-fw text-accent me-2"></i>
+        <a href="https://www.linkedin.com/in/mahir-zaman-295592346/" target="_blank" rel="noopener">LinkedIn Profile</a>
+      </p>
+    </div>
+
+    <div class="col-md-7">
+      <!-- The thank you message only appears after the form has been submitted. -->
+      <% if (locals.success) { %>
+        <div class="alert alert-success">
+          <i class="fa-solid fa-circle-check me-2"></i>
+          Thank you, <%= locals.name %>. Your message has been received.
+        </div>
+      <% } %>
+
+      <!-- The form uses Bootstrap validation, which is switched on by the main script. -->
+      <form action="/contact" method="POST" class="needs-validation card shadow-sm p-4" novalidate>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" name="name" required>
+          <div class="invalid-feedback">Please enter your name.</div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+          <div class="invalid-feedback">Please enter a valid email address.</div>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+          <div class="invalid-feedback">Please enter a message.</div>
+        </div>
+        <button type="submit" class="btn btn-navy">
+          <i class="fa-solid fa-paper-plane me-2"></i>Send Message
+        </button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<%- include('partials/footer') %>

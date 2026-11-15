@@ -11,4 +11,20 @@ document.addEventListener('DOMContentLoaded', function () {
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
+
+  // Any form with the needs-validation class is checked before it is sent.
+  // If a required field is empty or invalid, the form is stopped and
+  // Bootstrap highlights the fields that need attention.
+  const forms = document.querySelectorAll('.needs-validation');
+  forms.forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    });
+  });
 });
+
+
