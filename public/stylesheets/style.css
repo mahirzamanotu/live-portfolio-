@@ -5,10 +5,62 @@
   It styles the welcome banner, the card hover effect and the footer icons.
 */
 
-/* The welcome banner fills most of the screen and uses a blue to purple gradient. */
+/* The theme colours are stored as variables so the whole colour scheme can be changed in one place. */
+:root {
+  --navy-dark: #0a1630;
+  --navy: #1e3a8a;
+  --navy-light: #2f54c4;
+  --accent: #7aa2ff;
+}
+
+/* The navigation bar and footer use the darkest navy shade. */
+.navbar-custom,
+.footer-custom {
+  background-color: var(--navy-dark);
+}
+
+/* The welcome banner and the page banners use a navy gradient. */
+.hero,
+.page-header {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+}
+
+/* The welcome banner fills most of the screen. */
 .hero {
   min-height: 70vh;
-  background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+}
+
+/* The accent colour is a lighter blue so icons stay visible on the dark background. */
+.text-accent {
+  color: var(--accent);
+}
+
+/* The navy button is used for the main actions on the site. */
+.btn-navy {
+  background-color: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+.btn-navy:hover,
+.btn-navy:focus {
+  background-color: var(--navy-light);
+  border-color: var(--navy-light);
+  color: #fff;
+}
+
+/* The outlined navy button is used for secondary actions such as project links. */
+.btn-outline-navy {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.btn-outline-navy:hover {
+  background-color: var(--accent);
+  color: var(--navy-dark);
+}
+
+/* The navy background is used for the skill badges. */
+.bg-navy {
+  background-color: var(--navy) !important;
 }
 
 /* The cards rise slightly and gain a deeper shadow when hovered. */
@@ -17,7 +69,17 @@
 }
 .feature-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.4) !important;
+}
+
+/* The profile photo is cropped into a circle with an accent coloured border. */
+.profile-photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
 }
 
 /* The footer icons fade and grow slightly when hovered. */

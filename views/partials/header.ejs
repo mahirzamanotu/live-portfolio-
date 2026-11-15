@@ -5,7 +5,8 @@
   Each page includes this file so the header only needs to be written once. We use locals.title instead of just title so the page still works even if a route forgets to provide a title, such as on the error page.
 --> 
 <!DOCTYPE html>
-<html lang="en">
+<!-- The dark theme setting tells Bootstrap to use its dark colour mode across the whole site. -->
+<html lang="en" data-bs-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,10 +28,10 @@
 <body class="d-flex flex-column min-vh-100">
 
   <!-- The navigation bar is a Bootstrap component that collapses into a menu button on small screens. -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top shadow">
     <div class="container">
       <a class="navbar-brand fw-bold" href="/">
-        <i class="fa-solid fa-code me-2"></i>Mahir Zaman
+        <i class="fa-solid fa-code me-2 text-accent"></i>Mahir Zaman
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
